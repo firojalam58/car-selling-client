@@ -6,6 +6,7 @@ const Navbar = () => {
     }
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/product">Products</Link></li>
         <li><Link to="/services">Services</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/reviews">Reviews</Link></li>
@@ -33,7 +34,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+                <Link to="/" className="btn btn-ghost normal-case text-xl">Car Selling</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
