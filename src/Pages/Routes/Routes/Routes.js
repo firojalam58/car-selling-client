@@ -8,6 +8,7 @@ import Products from "../../Product/Products/Products";
 import Reviews from "../../Reviews/Reviews";
 import Services from "../../Services/Services";
 import Footer from "../../Shared/Footer/Footer";
+import SignUp from "../../Signup/SignUp";
 
 export const route = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const route = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
                 path: '/categories/:id',

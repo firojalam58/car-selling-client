@@ -20,11 +20,18 @@ const Navbar = () => {
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/signup">Sign Up</Link></li>
             </>
-
+app.get('/categories/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const category = await categoriesCollections.findOne(filter);
+            const query = { category: category.category };
+            const result = await productsCollections.find(query).toArray();
+            res.send(result);
+        })
         } */}
     </React.Fragment>
     return (
-        <div className="navbar bg-base-100 flex justify-between">
+        <div className="navbar bg-base-100 fex justify-center">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
