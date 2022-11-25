@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthContext/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
     }
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/product">Products</Link></li>
-        <li><Link to="/services">Services</Link></li>
+        <li><Link to="/products">Products</Link></li>
         <li><Link to="/about">About</Link></li>
-        <li><Link to="/reviews">Reviews</Link></li>
-        {/* {user?.uid ?
+        <li><Link to="/dashboard">Dashboard</Link></li>
+        {user?.uid ?
             <>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><button onClick={handleLogOut}>Sign out</button></li>
@@ -20,15 +24,8 @@ const Navbar = () => {
                 <li><Link to="/login">Login</Link></li>
                 <li><Link to="/signup">Sign Up</Link></li>
             </>
-app.get('/categories/:id', async (req, res) => {
-            const id = req.params.id;
-            const filter = { _id: ObjectId(id) };
-            const category = await categoriesCollections.findOne(filter);
-            const query = { category: category.category };
-            const result = await productsCollections.find(query).toArray();
-            res.send(result);
-        })
-        } */}
+
+        }
     </React.Fragment>
     return (
         <div className="navbar bg-base-100 fex justify-center">
