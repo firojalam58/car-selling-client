@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
@@ -8,22 +8,46 @@ const SignUp = () => {
 
 
     const navigate = useNavigate()
-    const { createUser, google } = useContext(AuthContext)
-    const handleSignup = event => {
+    const { createUser, google, updateUser } = useContext(AuthContext)
+    const [userEmail, setUserEmail] = useState('')
+    const handleSignup = (event, data) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        const password = form.password.value
-        createUser(email, password)
+        const password = form.password.value;
+        const name = form.name.value;
+        const role = form.option.value;
+        createUser(email, password, name, role)
             .then(result => {
                 const user = result.user
-                if (user) {
-                    navigate('/')
+
+                const userInfo = {
+                    displayName: event.name
                 }
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUser(name, email, role)
+                    })
+
             })
             .catch(error => console.error(error))
     }
 
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setUserEmail(email)
+                navigate('/')
+            })
+    }
 
     const handleGoogle = () => {
         google()
@@ -58,6 +82,24 @@ const SignUp = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                        </div>
+                        <div className="col-span-6 sm:col-span-3">
+                            <label
+                                htmlFor="FirstName"
+                                className="block text-sm font-medium text-gray-700"
+                            >
+                                Are you seller or buyer?
+                            </label>
+
+                            <select
+                                name="option"
+                                className="select select-bordered w-full max-w-xs"
+
+                            >
+                                <option disabled selected>Who shot first?</option>
+                                <option value="Buyer">Buyer</option>
+                                <option value="Seller">Seller</option>
+                            </select>
                         </div>
                         <div className="form-control">
                             <label className="label">
