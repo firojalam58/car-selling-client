@@ -30,7 +30,7 @@ const BmwCar = ({ category }) => {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <button className='btn btn-primary'>Add To Book</button>
+                    <Link><button className='btn btn-primary'>Add To Book</button></Link>
                 </div>
             </div>
         </div>
