@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import img from '../../images/login/images.avif'
+import toast from 'react-hot-toast';
 const SignUp = () => {
 
 
@@ -66,7 +67,8 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.accessToken) {
-                    localStorage.setItem('accessToken', data.accessToken)
+                    localStorage.setItem('accessToken', data.accessToken);
+                    toast.success('Signup SuccessFully')
                     navigate('/')
                 }
             })

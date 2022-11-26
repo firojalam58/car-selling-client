@@ -3,6 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 import img from '../../images/login/images.avif'
+import toast from 'react-hot-toast';
 const Login = () => {
     const { login, google, user } = useContext(AuthContext)
     const location = useLocation()
@@ -17,11 +18,12 @@ const Login = () => {
         const password = form.password.value;
         login(email, password)
             .then(res => {
-                const user = res.user
-                form.reset()
-                navigate(from, { replace: true })
+                const user = res.user;
+                toast.success('Login Successfully');
+                form.reset();
+                navigate(from, { replace: true });
             })
-            .catch(err => console.error(err))
+            .catch(err => console.error(err));
 
 
     }
@@ -32,6 +34,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 if (user) {
+                    toast.success('Login Successfully')
                     navigate(from, { replace: true })
 
                 }
