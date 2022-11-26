@@ -45,7 +45,7 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 setUserEmail(email)
-                navigate('/')
+                getToken(email)
             })
     }
 
@@ -61,6 +61,16 @@ const SignUp = () => {
             .catch(error => console.error(error))
     }
 
+    const getToken = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('accessToken', data.accessToken)
+                    navigate('/')
+                }
+            })
+    }
 
     return (
         <div className="hero my-20">

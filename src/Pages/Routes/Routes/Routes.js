@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../../Layout/Main/Main";
 import About from "../../About/About";
+import AdminRoutes from "../../Dashboard/AdminRoutes/AdminRoutes";
+import Dashboard from "../../Dashboard/Dashboard";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
 import Product from "../../Product/Product";
 import Products from "../../Product/Products/Products";
-import Reviews from "../../Reviews/Reviews";
 import Services from "../../Services/Services";
 import Footer from "../../Shared/Footer/Footer";
 import SignUp from "../../Signup/SignUp";
@@ -31,10 +32,7 @@ export const route = createBrowserRouter([
                 path: '/about',
                 element: <About></About>
             },
-            {
-                path: '/reviews',
-                element: <Reviews></Reviews>
-            },
+
             {
                 path: '/login',
                 element: <Login></Login>
@@ -53,6 +51,17 @@ export const route = createBrowserRouter([
                 path: '/footer',
                 element: <Footer></Footer>
             },
-        ]
-    }
+        ],
+
+    },
+    // [
+    //     {
+    //         path: '/dashboard',
+    //         element: <Dashboard></Dashboard>
+    //     },
+    //     {
+    //         path: '/dashboard/users',
+    //         element: <AdminRoutes></AdminRoutes>
+    //     },
+    // ]
 ])

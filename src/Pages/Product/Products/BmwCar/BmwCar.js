@@ -1,21 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BmwCar = ({ category }) => {
-    const { title, picture, company, location, description } = category;
+    const { _id, title, picture, postTime, sellerName, yearOfUse, resalePirce, originalPirce, company, location, description } = category;
     return (
         <div>
-            <div className='mt-5 mb-5'>
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
-                    <figure><img src={picture} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="text-center text-warning text-5xl">{title}</h2>
-                        <h3 className="text-center text-3xl text-warning">Company: {company}</h3>
-                        <h4 className="text-center text-2xl text-warning">Location: {location}</h4>
-                        <p>{description}</p>
-                        <div className="card-actions justify-center">
-                            <button className="btn btn-primary">See Category</button>
-                        </div>
+            <div className="flex flex-col mb-5 ml-5 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
+
+                <div>
+                    <img src={picture} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                    <h2 className="mb-1 text-xl font-semibold">{title}</h2>
+                    <p className="text-sm dark:text-gray-400">{description}</p>
+                </div>
+                <div className="flex space-x-4">
+                    <img alt="" src={picture} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                    <div className="flex flex-col space-y-1">
+                        <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Sellar Name:{sellerName}</a>
+                        <span className="text-xm dark:text-gray-400">Post Time: {postTime}</span>
+                        <span className=" text-xm dark:text-gray-400">Use: {yearOfUse} Years</span>
+                        <span className=" text-xm dark:text-gray-400">Location: {location}</span>
                     </div>
+                </div>
+                <div className="flex flex-wrap justify-between">
+
+                    <div className="flex space-x-2 text-sm dark:text-gray-400">
+                        <span className='text-xm'>OriginalPirce:{originalPirce}</span>
+                        <span className='text-xm'>ResalePirce: {resalePirce}</span>
+
+                    </div>
+                </div>
+                <div className='text-center'>
+                    <button className='btn btn-primary'>Add To Book</button>
                 </div>
             </div>
         </div>
