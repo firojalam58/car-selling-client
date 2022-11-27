@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../../Layout/Main/Main";
 import About from "../../About/About";
+import AddProducts from "../../AddProducts/AddProducts";
+import MyProduct from "../../AddProducts/MyProduct";
+import MyProducts from "../../AddProducts/MyProducts";
 import AdminRoutes from "../../Dashboard/AdminRoutes/AdminRoutes";
 import Dashboard from "../../Dashboard/Dashboard";
 import MyOrder from "../../Dashboard/MyOrder/MyOrder";
@@ -41,6 +44,14 @@ export const route = createBrowserRouter([
             {
                 path: '/order',
                 element: <MyOrder></MyOrder>
+            },
+            {
+                path: '/addproduct',
+                element: <AddProducts></AddProducts>
+            },
+            {
+                path: '/addproduc/myproducts',
+                element: <MyProduct></MyProduct>
             },
             {
                 path: '/signup',
