@@ -3,6 +3,7 @@ import Main from "../../../Layout/Main/Main";
 import About from "../../About/About";
 import AdminRoutes from "../../Dashboard/AdminRoutes/AdminRoutes";
 import Dashboard from "../../Dashboard/Dashboard";
+import MyOrder from "../../Dashboard/MyOrder/MyOrder";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
 import Product from "../../Product/Product";
@@ -36,6 +37,10 @@ export const route = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/order',
+                element: <MyOrder></MyOrder>
             },
             {
                 path: '/signup',
