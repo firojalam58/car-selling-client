@@ -1,8 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../../AuthContext/AuthProvider';
 
-const BmwCar = ({ category }) => {
+const BmwCar = ({ category, setData }) => {
+
+
     const { _id, title, picture, postTime, sellerName, yearOfUse, resalePirce, originalPirce, company, location, description } = category;
+    const { loading } = useContext(AuthContext)
+
     return (
         <div>
             <div className="flex flex-col mb-5 ml-5 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -30,7 +34,11 @@ const BmwCar = ({ category }) => {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <Link><button className='btn btn-primary'>Add To Card</button></Link>
+                    <label
+                        onClick={() => setData(category)}
+                        htmlFor="booking-modal"
+                        className="btn btn-primary">Book now
+                    </label>
                 </div>
             </div>
         </div>

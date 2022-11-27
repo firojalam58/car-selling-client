@@ -11,19 +11,19 @@ const SignUp = () => {
     const navigate = useNavigate()
     const { createUser, google, updateUser } = useContext(AuthContext)
     const [userEmail, setUserEmail] = useState('')
-    const handleSignup = (event, data) => {
+    const handleSignup = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
         const role = form.option.value;
-        createUser(email, password, name, role)
+        createUser(email, password)
             .then(result => {
                 const user = result.user
 
                 const userInfo = {
-                    displayName: event.name
+                    displayName: name
                 }
                 updateUser(userInfo)
                     .then(() => {

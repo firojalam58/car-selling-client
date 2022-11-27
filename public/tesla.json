@@ -54,21 +54,58 @@
         "description": "Enim adipisicing eu proident ex minim nisi fugiat sit enim laborum esse tempor magna. Incididunt laborum et aliquip voluptate anim deserunt deserunt. Dolor tempor dolor labore irure. Consectetur ad dolore culpa in.\r\n"
     }
 ]
+
 [
     {
         "category": "BMW",
-        "picture": "https://media.wired.com/photos/5dd82f459ac14a0008116985/master/pass/Transoi_storyone_Screen-Shot-2019-11-22-at-10.38.01-AM.jpg",
+        "picture": "https://media.wired.com/photos/5dd82f459ac14a0008116985/master/pass/Transoi_storyone_Screen-Shot-2019-11-22-at-10.38.01-AM.jpg"
     },
     {
         "category": "TESLA",
-        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdnNamBwuMN-xQfYwDUeVDdRM7xYQyv2fmgaIPfF2ORzsK-QlaxbgcT8qPaUZLDKHzROE&usqp=CAU",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdnNamBwuMN-xQfYwDUeVDdRM7xYQyv2fmgaIPfF2ORzsK-QlaxbgcT8qPaUZLDKHzROE&usqp=CAU"
     },
     {
         "category": "LAMBERGINI",
-        "picture": "https://i.insider.com/57c703f709d2935f0f8b565b?width=700",
+        "picture": "https://i.insider.com/57c703f709d2935f0f8b565b?width=700"
     },
     {
         "category": "GORILLA",
-        "picture": "https://media.wired.com/photos/5dd82f459ac14a0008116985/master/pass/Transoi_storyone_Screen-Shot-2019-11-22-at-10.38.01-AM.jpg",
+        "picture": "https://media.wired.com/photos/5dd82f459ac14a0008116985/master/pass/Transoi_storyone_Screen-Shot-2019-11-22-at-10.38.01-AM.jpg"
+    }
+]
+
+
+
+
+[
+    {
+        "category": "Apple",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
+    },
+    {
+        "category": "Realme",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
+    },
+    {
+        "category": "Realme",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
+    }
+]
+
+
+
+
+[
+    {
+        "category": "Apple",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
+    },
+    {
+        "category": "Realme",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
+    },
+    {
+        "category": "Realme",
+        "image": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s"
     }
 ]

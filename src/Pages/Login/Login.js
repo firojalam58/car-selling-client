@@ -15,8 +15,9 @@ const Login = () => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
+        const name = form.name.value;
         const password = form.password.value;
-        login(email, password)
+        login(email, password, name)
             .then(res => {
                 const user = res.user;
                 toast.success('Login Successfully');
