@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthContext/AuthProvider';
 
 const MyOrder = () => {
@@ -16,7 +17,7 @@ const MyOrder = () => {
     // })
 
     useEffect(() => {
-        fetch(url)
+        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data)
@@ -53,22 +54,22 @@ const MyOrder = () => {
                                     <td>{booking.title}</td>
                                     <td>{booking.price}</td>
                                     <td className='text-error'>Pay</td>
-                                    {/* <td>
-                                    {
-                                        booking.price && !booking.paid && <Link
-                                            to={`/dashboard/payment/${booking._id}`}
-                                        >
-                                            <button
-                                                className='btn btn-primary btn-sm'
-                                            >Pay</button>
-                                        </Link>
-                                    }
-                                    {
-                                        booking.price && booking.paid && <span
-                                            className='text-primary btn-sm'
-                                        >Paid</span>
-                                    }
-                                </td> */}
+                                    <td>
+                                        {
+                                            booking.price && !booking.paid && <Link
+                                                to={`/dashboard/payment/${booking._id}`}
+                                            >
+                                                <button
+                                                    className='btn btn-primary btn-sm'
+                                                >Pay</button>
+                                            </Link>
+                                        }
+                                        {
+                                            booking.price && booking.paid && <span
+                                                className='text-primary btn-sm'
+                                            >Paid</span>
+                                        }
+                                    </td>
                                 </tr>
                                 )
                             }

@@ -43,7 +43,7 @@ const AddProducts = () => {
             email: user.email
         }
 
-        fetch('http://localhost:5000/products', {
+        fetch('http://localhost:5000/addproducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

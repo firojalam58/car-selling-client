@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import toast from 'react-hot-toast';
 
-const AddToCard = ({ data, user }) => {
+const AddToCard = ({ data, user, setData }) => {
     console.log(user);
     const { location, resalePirce, title, picture } = data;
     const handleSubmit = event => {
@@ -37,6 +38,7 @@ const AddToCard = ({ data, user }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
+                    setData(null)
                     toast.success('booking confirm')
                 }
                 else {

@@ -23,6 +23,7 @@ const Products = () => {
                     data && <AddToCard
                         data={data}
                         user={user}
+                        setData={setData}
                     ></AddToCard>
                 }
             </div>

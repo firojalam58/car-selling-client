@@ -6,7 +6,7 @@ const MyProduct = () => {
     const { user } = useContext(AuthContext)
     const [myproduct, setMyProduct] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/products?email=${user?.email}`
+        const url = `http://localhost:5000/addproducts?email=${user?.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
