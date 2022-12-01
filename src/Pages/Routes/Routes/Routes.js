@@ -64,7 +64,7 @@ export const route = createBrowserRouter([
     
     {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
             {
                 path: '/dashboard',
@@ -103,57 +103,3 @@ export const route = createBrowserRouter([
     }
 ])
 
-
-{/* <PrivateRoute></PrivateRoute>, */}
-
-
-// {
-//     path: '/dashboard',
-//     element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-//     errorElement: <DisplayError></DisplayError>,
-//     children: [
-//         {
-//             path: '/dashboard',
-//             element:<Dashboard></Dashboard>
-
-//         },
-//         {
-//             path: '/dashboard/myOrders',
-//             element: <MyOrders></MyOrders>
-
-//         },
-//         {
-//             path: '/dashboard/users/Sellers',
-//             element:<AllSellers></AllSellers>
-
-//         },
-//         {
-//             path: '/dashboard/users/Buyers',
-//             element: <AllBuyers></AllBuyers>
-
-//         },
-//         {
-//             path: '/dashboard/reportedItems',
-//             element: <ReportedItems></ReportedItems>
-
-//         },
-//         {
-//             path: '/dashboard/myProducts',
-//             element:<MyProducts></MyProducts>
-
-//         },
-//         {
-//             path: '/dashboard/addProducts',
-//             element:<AddProducts></AddProducts>
-
-//         },
-        
-//         {
-//             path: '/dashboard/payment/:id',
-//             element:<Payment></Payment>,
-//             loader: ({params}) => fetch(https://used-cloth-collections-server.vercel.app/bookings/${params.id})
-
-//         },
-        
-//     ]
-// }

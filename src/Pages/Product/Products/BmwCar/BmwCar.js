@@ -7,6 +7,16 @@ const BmwCar = ({ category, setData }) => {
     const { _id, title, picture, postTime, sellerName, yearOfUse, resalePirce, originalPirce, company, location, description } = category;
     const { loading } = useContext(AuthContext)
 
+    const handleReport = id =>{
+        fetch(`http://localhost:5000/reportproduct/${id}`,{
+            method:'PUT'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+            }
+
     return (
         <div>
             <div className="flex flex-col mb-5 ml-5 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -39,6 +49,7 @@ const BmwCar = ({ category, setData }) => {
                         htmlFor="booking-modal"
                         className="btn btn-primary">Book now
                     </label>
+                    <button onClick={()=> handleReport(_id)} className='btn btn-primary'>Report</button>
                 </div>
             </div>
         </div>

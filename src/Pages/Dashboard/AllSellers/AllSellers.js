@@ -1,7 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
 import {useQuery} from '@tanstack/react-query'
 import toast from 'react-hot-toast';
+import { AiFillCheckCircle } from 'react-icons/ai';
 const AllSellers = () => {
 
     const { data: allsellers = [], refetch } = useQuery({
@@ -27,6 +27,18 @@ const handleDelete = id =>{
             refetch()
         }
     })
+};
+const handleVerify = id =>{
+    fetch(`http://localhost:5000/allsellers/verify/${id}`,{
+        method:'PUT',
+    })
+    .then(res => res.json())
+    .then(data =>{
+        if(data.modifiedCount > 0){
+            toast.success('Verify Successfully')
+            refetch()
+        }
+    })
 }
 
 return (
@@ -39,7 +51,7 @@ return (
                         <th></th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Admin</th>
+                        <th>Status</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -49,7 +61,10 @@ return (
                             <th>{i + 1}</th>
                             <td>{seller.name}</td>
                             <td>{seller.email}</td>
-                            <td>{seller?.role !== 'admin' && <button  className='btn btn-xs btn-primary'>Make Admin</button>}</td>
+                           { seller?.verify?
+                           <td><AiFillCheckCircle className=' text-center text-green-500 mt-2'/> </td>:
+                         <td>{seller?.role !== 'admin' && <button  className='btn btn-xs btn-primary'onClick={() => handleVerify(seller._id)}> Verify </button>}</td>
+                        }
                             <td><button className='btn btn-xs btn-danger'onClick={() => handleDelete(seller._id)}>Delete</button></td>
                         </tr>)
                     }

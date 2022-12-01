@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 import useAdmin from '../Hooks/useAdmin';
+import useBuyer from '../Hooks/useBuyer';
 import useSeller from '../Hooks/useSeller';
 import Navbar from '../Shared/Navbar/Navbar';
 
@@ -9,6 +10,7 @@ const Dashboard = () => {
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
     const [isSeller] = useSeller(user?.email)
+    const [isBuyer] = useBuyer(user?.email)
     return (
         <div>
             <Navbar></Navbar>
@@ -21,9 +23,9 @@ const Dashboard = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu lg:pl-32 hover-bordered bg-base-content w-80 text-white font-semibold text-xl pt-12">
                         <li><Link to='/dashboard'></Link></li>
-                        <li><Link to='/dashboard/myOrders'>My Orders</Link></li>
+                        
                         {
-                            // isAdmin && 
+                            isAdmin && 
                             <>
                                 <li><Link to='/dashboard/usersSellers'>All Sellers</Link></li>
                                 <li><Link to='/dashboard/usersBuyers'>All Buyers</Link></li>
@@ -31,10 +33,16 @@ const Dashboard = () => {
                             </>
                         }
                         {
-                            // isSeller && 
+                            isSeller && 
                             <>
                                 <li><Link to='/dashboard/myProducts'>My Products</Link></li>
                                 <li><Link to='/dashboard/addProducts'>Add Products</Link></li>
+                            </>
+                        }
+                        {
+                            isBuyer &&
+                            <>
+                            <li><Link to='/dashboard/myOrders'>My Orders</Link></li>
                             </>
                         }
                     </ul>
