@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthContext/AuthProvider';
@@ -6,7 +6,7 @@ import { AuthContext } from '../../../AuthContext/AuthProvider';
 const MyOrder = () => {
     const [order, setOrder] = useState([])
     const { user } = useContext(AuthContext)
-    const url = (`http://localhost:5000/bookings?email=${user?.email}`)
+    // const url = (`http://localhost:5000/bookings?email=${user?.email}`)
     // const { data: bookings = [] } = useQuery({
     //     queryKey: ['bookings', user?.email],
     //     queryFn: async () => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from '../../../images/banner/slider-3.jpg'
 const Banner = () => {
     return (
@@ -9,7 +10,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">Hello Sweet Client</h1>
                         <p className="mb-5">Welcome Our Special Car Service We Provide The Awesome Car.</p>
-                        <button className="btn btn-primary">Order Now</button>
+                        <Link to={'/products'}><button className="btn btn-primary">Order Now</button></Link>
                     </div>
                 </div>
             </div>

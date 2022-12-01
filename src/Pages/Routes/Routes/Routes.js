@@ -3,15 +3,11 @@ import Main from "../../../Layout/Main/Main";
 import About from "../../About/About";
 import AddProducts from "../../AddProducts/AddProducts";
 import MyProduct from "../../AddProducts/MyProduct";
-import MyProducts from "../../AddProducts/MyProducts";
-import AdminRoutes from "../../Dashboard/AdminRoutes/AdminRoutes";
-import Dashboard from "../../Dashboard/Dashboard";
 import MyOrder from "../../Dashboard/MyOrder/MyOrder";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
 import Product from "../../Product/Product";
 import Products from "../../Product/Products/Products";
-import Services from "../../Services/Services";
 import Footer from "../../Shared/Footer/Footer";
 import SignUp from "../../Signup/SignUp";
 
@@ -27,10 +23,6 @@ export const route = createBrowserRouter([
             {
                 path: '/products',
                 element: <Product></Product>
-            },
-            {
-                path: '/services',
-                element: <Services></Services>
             },
             {
                 path: '/about',
