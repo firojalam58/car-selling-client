@@ -15,8 +15,6 @@ const AddProducts = () => {
         const form = event.target;
         const title = form.title.value;
         const category = form.category.value;
-        const opinion = form.opinion.value;
-        const isVerified = form.isVerified.value;
         const picture = form.picture.value;
         const originalPrice = form.originalPrice.value;
         const resalePrice = form.resalePrice.value;
@@ -30,8 +28,6 @@ const AddProducts = () => {
         const booking = {
             title,
             category,
-            opinion,
-            isVerified,
             picture,
             originalPrice,
             resalePrice,
@@ -40,7 +36,7 @@ const AddProducts = () => {
             location,
             description,
             postTime,
-            email: user.email
+            email: user?.email
         }
 
         fetch('http://localhost:5000/addproducts', {
@@ -56,7 +52,7 @@ const AddProducts = () => {
                 if (data.acknowledged) {
                     toast.success('Product Add confirm')
                     form.reset();
-                    navigate('/addproduc/myproducts')
+                    navigate('/dashboard/myProducts')
                 }
                 else {
                     toast.error(data.message)
@@ -74,28 +70,19 @@ const AddProducts = () => {
                     <div className='w-96 bg-gray-800 rounded-md p-7'>
                         <form onSubmit={handleAddToCard}>
                             <input type="text" name='title' placeholder="Model" className="input input-sm input-bordered w-full max-w-xs" />
-                            <select name='category' className="select select-sm select-bordered w-full max-w-xs my-2">
+                            <select  name='category' className="select select-sm select-bordered w-full max-w-xs my-2 ">
                                 <option disabled selected>Category</option>
-                                <option value="Audi Car">Audi Car</option>
-                                <option value="Bmw Car">Bmw Car</option>
-                                <option value="Toyota Car">Toyota car</option>
+                                <option value="GORILLA">Gorilla Car</option>
+                                <option value="Bmw">Bmw Car</option>
+                                <option value="TESLA">Tesla car</option>
+                                <option value="LAMBERGINI">Lambergini car</option>
                             </select>
-                            <select name='opinion' className="select select-sm select-bordered w-full max-w-xs">
-                                <option disabled selected>Opinion</option>
-                                <option value="good">good</option>
-                                <option value="Very good">Very good</option>
-                            </select>
-                            <select name='isVerified' className="select select-sm select-bordered w-full max-w-xs my-2">
-                                <option disabled selected>Verified</option>
-                                <option value="true">True</option>
-                                <option value="false">False</option>
-                            </select>
-                            <input type="text" name='picture' placeholder="Photo Url" className="input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='originalPrice' placeholder="OriginalPrice" className=" my-2 input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='resalePrice' placeholder="ResalePrice" className="input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='yearOfUse' placeholder="Year Of Use" className=" my-2 input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='sellerName' placeholder="Seller Name" className="input input-sm input-bordered w-full max-w-xs" />
-                            <input type="text" name='location' placeholder="location" className=" my-2 input input-sm input-bordered w-full max-w-xs" />
+                            <input  type="text" name='picture' placeholder="Photo Url" className="input  input-sm input-bordered w-full max-w-xs" required />
+                            <input  type="text" name='originalPrice' placeholder="OriginalPrice" className=" my-2 input input-sm input-bordered w-full max-w-xs" required />
+                            <input type="text" name='resalePrice' placeholder="ResalePrice" className="input input-sm input-bordered w-full max-w-xs"required  />
+                            <input type="text" name='yearOfUse' placeholder="Year Of Use" className=" my-2 input input-sm input-bordered w-full max-w-xs" required />
+                            <input type="text" name='sellerName' placeholder="Seller Name" className="input input-sm input-bordered w-full max-w-xs"  required/>
+                            <input type="text" name='location' placeholder="location" className=" my-2 input input-sm input-bordered w-full max-w-xs" required />
                             <textarea name='description' className="textarea textarea-bordered " cols="42" rows="4" placeholder="description"></textarea>
                             <input type="submit" className='w-full btn bg-gray-600' value="Submit" />
                         </form>

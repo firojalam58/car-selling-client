@@ -19,8 +19,8 @@ const Team = () => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">Kuddus Khan!</h2>
                 <p>Team members may work in guest services, with food, or with customers. In this position, you</p>
-                <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+                <div className="card-actions text-center">
+                <button className="btn btn-primary">Contract Now</button>
                 </div>
             </div>
             </div>
@@ -32,7 +32,7 @@ const Team = () => {
                 <h2 className="card-title">Akkas Ali</h2>
                 <p>you may greet customers, clean up after them, or perform other duties related to customer service.</p>
                 <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+                <button className="btn btn-primary">Contract Now</button>
                 </div>
             </div>
             </div>
@@ -44,7 +44,7 @@ const Team = () => {
                 <h2 className="card-title">Jorina Khatun</h2>
                 <p>Team members may work in guest services, with food, or with customers. In this position, you </p>
                 <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+                <button className="btn btn-primary">Contract Now</button>
                 </div>
             </div>
             </div>
@@ -56,7 +56,7 @@ const Team = () => {
                 <h2 className="card-title">Rokeya</h2>
                 <p>A team member is an employee who works in a group or team, like those who work in restaurants, retail, and hospitality.</p>
                 <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+                <button className="btn btn-primary">Contract Now</button>
                 </div>
             </div>
             </div>

@@ -36,7 +36,6 @@ const AddToCard = ({ data, user, setData }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.acknowledged) {
                     setData(null)
                     toast.success('booking confirm')

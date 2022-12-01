@@ -1,24 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthContext/AuthProvider';
+import {useQuery} from '@tanstack/react-query'
 import MyProducts from './MyProducts';
 
 const MyProduct = () => {
     const { user } = useContext(AuthContext)
-    const [myproduct, setMyProduct] = useState([]);
-    useEffect(() => {
-        const url = `http://localhost:5000/addproducts?email=${user?.email}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setMyProduct(data)
-            })
-    }, [])
+
+
+    const { data: addproducts = [], refetch } = useQuery({
+        queryKey: ['addproducts'],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/addproducts?email=${user?.email}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            const data = await res.json();
+            return data;
+        }
+    })
     return (
         <div>
             {
-                myproduct.map(product => <MyProducts
+                addproducts.map(product => <MyProducts
                     key={product._id}
                     category={product}
+                    refetch={refetch}
                 ></MyProducts>)
             }
         </div>
@@ -26,5 +33,3 @@ const MyProduct = () => {
 };
 
 export default MyProduct;
-
-// const url = http://localhost:5000/products?email=${user?.email}

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 
-const MyProducts = ({ category, setData }) => {
+const MyProducts = ({ category, setData,refetch }) => {
 
     const { _id, title, picture, postTime, sellerName, yearOfUse, resalePrice, originalPrice, company, location, description } = category;
     const { loading } = useContext(AuthContext)
@@ -13,7 +14,12 @@ const MyProducts = ({ category, setData }) => {
             method: 'DELETE',
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if(data.deletedCount >0){
+                    toast.success('deleted successfully');
+                    refetch();
+                }
+            })
     }
     return (
 
