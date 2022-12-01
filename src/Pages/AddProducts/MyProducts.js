@@ -4,7 +4,7 @@ import { AuthContext } from '../../AuthContext/AuthProvider';
 
 const MyProducts = ({ category, setData,refetch }) => {
 
-    const { _id, title, picture, postTime, sellerName, yearOfUse, resalePrice, originalPrice, company, location, description } = category;
+    const { _id, title,advertise, picture, postTime, sellerName, yearOfUse, resalePrice, originalPrice, company, location, description } = category;
     const { loading } = useContext(AuthContext)
 
     const handleDelete = id => {
@@ -20,6 +20,19 @@ const MyProducts = ({ category, setData,refetch }) => {
                     refetch();
                 }
             })
+    }
+    const handleAdvertise = id =>{
+        fetch(`http://localhost:5000/advertiseproduct/${id}`,{
+            method:'PUT'
+        })
+        .then (res=> res.json())
+        .then (data => {
+            if(data.modifiedCount > 0){
+                toast.success('This Product Advertise is Start');
+                refetch()
+            }
+            
+        })
     }
     return (
 
@@ -50,6 +63,11 @@ const MyProducts = ({ category, setData,refetch }) => {
                 </div>
                 <div className='text-center'>
                     <button className='btn w-60 font-bold mt-3' onClick={() => handleDelete(_id)}>Delete</button>
+                    {
+                        advertise? <button className='btn btn-primary'>Advertised</button>
+                        :
+                        <button className='btn w-60 font-bold mt-3' onClick={() => handleAdvertise(_id)}>Advertise</button>
+                    }
                 </div>
             </div>
         </div >

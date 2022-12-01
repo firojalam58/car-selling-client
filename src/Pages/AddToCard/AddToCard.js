@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const AddToCard = ({ data, user, setData }) => {
-    console.log(user);
-    const { location, resalePirce, title, picture } = data;
+    const { location,price, resalePrice, title, picture } = data;
+    console.log(data);
     const handleSubmit = event => {
         event.preventDefault()
         const form = event.target;
@@ -59,7 +59,7 @@ const AddToCard = ({ data, user, setData }) => {
                         <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <h3 className="text-lg font-bold">{location}</h3>
                         <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-3 mt-10'>
-                            <input name='price' type="text" disabled defaultValue={resalePirce} className="input w-full input-bordered " />
+                            <input name='price' type="text" disabled defaultValue={resalePrice} className="input w-full input-bordered " />
                             <input name='title' type="text" disabled defaultValue={title} className="input w-full input-bordered " />
                             <input name="names" disabled defaultValue={user?.displayName} type="text" placeholder="Your Name" className="input w-full input-bordered" />
                             <input name="email" disabled defaultValue={user?.email} type="email" placeholder="Email Address" className="input w-full input-bordered" />

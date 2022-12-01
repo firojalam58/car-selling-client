@@ -4,7 +4,7 @@ import { AuthContext } from '../../../../AuthContext/AuthProvider';
 const BmwCar = ({ category, setData }) => {
 
 
-    const { _id, title, picture, postTime, sellerName, yearOfUse, resalePirce, originalPirce, company, location, description } = category;
+    const { _id, title, picture, postTime, sellerName, yearOfUse, resalePrice, originalPirce, company, location, description } = category;
     const { loading } = useContext(AuthContext)
 
     const handleReport = id =>{
@@ -39,17 +39,17 @@ const BmwCar = ({ category, setData }) => {
 
                     <div className="flex space-x-2 text-sm dark:text-gray-400">
                         <span className='text-xm'>OriginalPirce:{originalPirce}</span>
-                        <span className='text-xm'>ResalePirce: {resalePirce}</span>
+                        <span className='text-xm'>ResalePirce: {resalePrice}</span>
 
                     </div>
                 </div>
-                <div className='text-center'>
+                <div className='text-center '>
                     <label
                         onClick={() => setData(category)}
                         htmlFor="booking-modal"
                         className="btn btn-primary">Book now
                     </label>
-                    <button onClick={()=> handleReport(_id)} className='btn btn-primary'>Report</button>
+                    <button onClick={()=> handleReport(_id)} className='btn btn-primary ml-3'>Report</button>
                 </div>
             </div>
         </div>
