@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
-import img from '../../images/login/images.avif'
+import img from '../../images/banner/toyota1.jpg'
 import toast from 'react-hot-toast';
 const SignUp = () => {
 

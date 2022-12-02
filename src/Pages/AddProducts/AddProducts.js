@@ -39,7 +39,7 @@ const AddProducts = () => {
             email: user?.email
         }
 
-        fetch('https://car-selling-server-rho.vercel.app/addproducts', {
+        fetch('https://car-selling-server-rho.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthContext/AuthProvider';
-import img from '../../images/login/images.avif'
+import img from '../../images/banner/toyota1.jpg'
 import toast from 'react-hot-toast';
 const Login = () => {
     const { login, google, user } = useContext(AuthContext)
