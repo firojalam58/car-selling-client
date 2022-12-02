@@ -3,11 +3,13 @@ import Main from "../../../Layout/Main/Main";
 import About from "../../About/About";
 import AddProducts from "../../AddProducts/AddProducts";
 import MyProduct from "../../AddProducts/MyProduct";
+import Blog from "../../Blog/Blog";
 import AllBuyers from "../../Dashboard/AllBuyers/AllBuyers";
 import AllSellers from "../../Dashboard/AllSellers/AllSellers";
 import Dashboard from "../../Dashboard/Dashboard";
 import DashboardLayout from "../../Dashboard/DashboardLayout";
 import MyOrder from "../../Dashboard/MyOrder/MyOrder";
+import Payment from "../../Dashboard/Payment/Payment";
 import ReportedItems from "../../Dashboard/ReportedItems/ReportedItems";
 import Home from "../../Home/Home";
 import Login from "../../Login/Login";
@@ -40,8 +42,8 @@ export const route = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/order',
-                element: <MyOrder></MyOrder>
+                path: '/blog',
+                element: <Blog></Blog>
             },
            
             {
@@ -93,6 +95,11 @@ export const route = createBrowserRouter([
             {
                 path: '/dashboard/myProducts',
                 element: <MyProduct></MyProduct>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
             },
             {
                 path: '/dashboard/reportedItems',

@@ -6,15 +6,7 @@ import { AuthContext } from '../../../AuthContext/AuthProvider';
 const MyOrder = () => {
     const [order, setOrder] = useState([])
     const { user } = useContext(AuthContext)
-    // const url = (`http://localhost:5000/bookings?email=${user?.email}`)
-    // const { data: bookings = [] } = useQuery({
-    //     queryKey: ['bookings', user?.email],
-    //     queryFn: async () => {
-    //         const res = await fetch(url)
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // })
+   
 
     useEffect(() => {
         fetch(`http://localhost:5000/bookings?email=${user?.email}`)

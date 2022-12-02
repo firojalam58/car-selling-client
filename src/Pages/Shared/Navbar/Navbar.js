@@ -1,24 +1,28 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthContext/AuthProvider';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(err => console.log(err));
+            navigate('/login')
     }
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/products">Products</Link></li>
         <li><Link to="/about">About</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
         <li>
             {
                 user?.uid ?
                     <>
                         <li><Link to='/dashboard'>Dashboard</Link></li>
                         <button onClick={handleLogOut}>Logout</button>
+                        
                     </>
                     :
                     <Link to='/login'>Login</Link>
@@ -44,7 +48,7 @@ const Navbar = () => {
                     {menuItems}
                 </ul>
             </div>
-            <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden md:hidden">
+            <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
         </div>
