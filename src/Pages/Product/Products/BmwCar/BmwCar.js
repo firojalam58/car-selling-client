@@ -8,7 +8,7 @@ const BmwCar = ({ category, setData }) => {
     const { loading } = useContext(AuthContext)
 
     const handleReport = id =>{
-        fetch(`http://localhost:5000/reportproduct/${id}`,{
+        fetch(`https://car-selling-server-rho.vercel.app/reportproduct/${id}`,{
             method:'PUT'
         })
         .then(res => res.json())

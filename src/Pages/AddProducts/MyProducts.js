@@ -8,7 +8,7 @@ const MyProducts = ({ category, setData,refetch }) => {
     const { loading } = useContext(AuthContext)
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/addproducts/${id}`
+        const url = `https://car-selling-server-rho.vercel.app/addproducts/${id}`
 
         fetch(url, {
             method: 'DELETE',
@@ -22,7 +22,7 @@ const MyProducts = ({ category, setData,refetch }) => {
             })
     }
     const handleAdvertise = id =>{
-        fetch(`http://localhost:5000/advertiseproduct/${id}`,{
+        fetch(`https://car-selling-server-rho.vercel.app/advertiseproduct/${id}`,{
             method:'PUT'
         })
         .then (res=> res.json())

@@ -30,7 +30,7 @@ export const route = createBrowserRouter([
             },
             {
                 path: '/products',
-                element: <Product></Product>
+                element: <PrivateRoute><Product></Product></PrivateRoute>
             },
             {
                 path: '/about',
@@ -53,7 +53,7 @@ export const route = createBrowserRouter([
             {
                 path: '/categories/:id',
                 element: <Products></Products>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-selling-server-rho.vercel.app/categories/${params.id}`)
             },
 
             {
@@ -99,7 +99,7 @@ export const route = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader: ({params})=> fetch(`https://car-selling-server-rho.vercel.app/bookings/${params.id}`)
             },
             {
                 path: '/dashboard/reportedItems',

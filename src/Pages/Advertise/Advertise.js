@@ -10,7 +10,7 @@ const Advertise = () => {
     const { data: advertiseproduct = [], refetch } = useQuery({
         queryKey: ['advertiseproduct'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/advertiseproduct', {
+            const res = await fetch('https://car-selling-server-rho.vercel.app/advertiseproduct', {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }

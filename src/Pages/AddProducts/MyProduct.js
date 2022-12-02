@@ -10,7 +10,7 @@ const MyProduct = () => {
     const { data: addproducts = [], refetch } = useQuery({
         queryKey: ['addproducts'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/addproducts?email=${user?.email}`, {
+            const res = await fetch(`https://car-selling-server-rho.vercel.app/addproducts?email=${user?.email}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }

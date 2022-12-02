@@ -36,7 +36,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, role) => {
         const user = { name, email, role }
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-selling-server-rho.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const SignUp = () => {
     }
 
     const getToken = email => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`https://car-selling-server-rho.vercel.app/jwt?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 if (data.accessToken) {
