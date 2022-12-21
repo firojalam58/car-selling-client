@@ -12,7 +12,7 @@ const Team = () => {
             </div>
         <div className='grid gap-4 grid-cols-1  md:grid-cols-2 lg:grid-cols-4 mb-5'>
            
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={img1} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -24,7 +24,7 @@ const Team = () => {
                 </div>
             </div>
             </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={img2} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -36,7 +36,7 @@ const Team = () => {
                 </div>
             </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={img3} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -48,7 +48,7 @@ const Team = () => {
                 </div>
             </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={img4} alt="Shoes" className="rounded-xl" />
             </figure>

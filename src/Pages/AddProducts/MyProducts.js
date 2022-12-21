@@ -8,7 +8,7 @@ const MyProducts = ({ category, setData,refetch }) => {
     const { loading } = useContext(AuthContext)
 
     const handleDelete = id => {
-        const url = `https://car-selling-server-rho.vercel.app/addproducts/${id}`
+        const url = `https://car-selling-server-rho.vercel.app/deleteproducts/${id}`
 
         fetch(url, {
             method: 'DELETE',

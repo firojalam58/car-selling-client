@@ -12,7 +12,7 @@ const MyProduct = () => {
         queryFn: async () => {
             const res = await fetch(`https://car-selling-server-rho.vercel.app/addproducts?email=${user?.email}`, {
                 headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    authorization: `localStorage.getItem('accessToken')`
                 }
             });
             const data = await res.json();

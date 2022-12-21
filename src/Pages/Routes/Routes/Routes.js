@@ -52,7 +52,7 @@ export const route = createBrowserRouter([
             },
             {
                 path: '/categories/:id',
-                element: <Products></Products>,
+                element: <PrivateRoute><Products></Products></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://car-selling-server-rho.vercel.app/categories/${params.id}`)
             },
 
@@ -90,7 +90,7 @@ export const route = createBrowserRouter([
             },
             {
                 path: '/dashboard/addProducts',
-                element: <AddProducts></AddProducts>
+                element:<PrivateRoute> <AddProducts></AddProducts></PrivateRoute>
             },
             {
                 path: '/dashboard/myProducts',
